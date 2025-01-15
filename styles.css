@@ -1,0 +1,154 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1); 
+    padding: 40px 30px;
+    width: 90%;
+    max-width: 900px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-container {
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#city {
+    padding: 12px;
+    font-size: 1.2rem; 
+    width: 65%;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#city:focus {
+    border-color: #4CAF50;
+}
+
+button {
+    padding: 12px;
+    font-size: 1.2rem; 
+    cursor: pointer;
+    background-color: #6CB4EE;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px); 
+}
+
+button:active {
+    background-color: #388e3c;
+    transform: translateY(0); 
+}
+
+#weather-info, #forecast-info {
+    margin-top: 20px;
+    padding: 25px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); 
+    text-align: left;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+
+#weather-info:hover, #forecast-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.2); 
+}
+
+
+@keyframes shake {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+
+
+.error-message {
+    color: #e74c3c;
+    font-size: 1.2rem;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    animation: shake 0.5s ease-in-out;
+}
+
+
+@keyframes box-shadow-pulse {
+    0% {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); 
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+}
+
+#weather-info, #forecast-info {
+    animation: box-shadow-pulse 2s infinite alternate; 
+}
+
+
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    #city {
+        width: 60%;
+        font-size: 1.1rem;
+    }
+
+    button {
+        font-size: 1.1rem;
+        padding: 10px;
+    }
+}
+
